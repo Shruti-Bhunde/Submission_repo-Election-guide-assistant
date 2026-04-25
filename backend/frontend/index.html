@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Guide Assistant | Your Vote Matters</title>
+    <meta name="description" content="An interactive guide to help you understand the election process, timelines, and voting steps.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero container">
+        <div class="reveal">
+            <h1>Master the <span style="color: var(--accent-gold);">Election</span> Journey</h1>
+            <p>Empowering you with the knowledge to navigate the democratic process. From registration to result, we're here to guide every step of the way.</p>
+            <div class="cta-group">
+                <a href="#process-section" class="btn btn-primary">View Timeline</a>
+                <a href="#wizard-section" class="btn glass" style="color: white;">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Timeline Section -->
+    <section id="process-section" class="container">
+        <div class="section-title reveal">
+            <h2>Voting Roadmap</h2>
+            <p>Phase-by-phase breakdown of the election lifecycle</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-track"></div>
+            
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass">
+                    <i data-lucide="user-plus" style="color: var(--accent-gold);"></i>
+                    <h3>1. Voter Registration</h3>
+                    <p>The first step is ensuring you're on the electoral roll. Check your eligibility and submit your application before the deadline.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass">
+                    <i data-lucide="search" style="color: var(--accent-gold);"></i>
+                    <h3>2. Candidate Research</h3>
+                    <p>Know who you're voting for. Review manifestos, track records, and party platforms to make an informed choice.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass">
+                    <i data-lucide="map-pin" style="color: var(--accent-gold);"></i>
+                    <h3>3. Find Polling Station</h3>
+                    <p>Locate your assigned polling booth. Verify the timing and ensure you have transportation planned for election day.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass">
+                    <i data-lucide="check-circle" style="color: var(--accent-gold);"></i>
+                    <h3>4. Casting Your Vote</h3>
+                    <p>On election day, bring your valid ID. Follow the instructions at the booth and cast your ballot securely.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass">
+                    <i data-lucide="bar-chart-3" style="color: var(--accent-gold);"></i>
+                    <h3>5. Result Declaration</h3>
+                    <p>After polls close, counting begins. Results are verified and announced through official channels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wizard Section -->
+    <section id="wizard-section" class="container" style="padding: 8rem 0;">
+        <div class="glass reveal" style="padding: 4rem; text-align: center; max-width: 800px; margin: 0 auto;">
+            <div id="wizard-content">
+                <i data-lucide="sparkles" class="floating" style="width: 48px; height: 48px; color: var(--accent-gold); margin-bottom: 2rem;"></i>
+                <h2>Personalized Assistant</h2>
+                <p style="margin-bottom: 2.5rem;">Answer a few questions to get a tailored guide for your location and status.</p>
+                <button class="btn btn-primary" onclick="startWizard()">Launch Guide</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Bot -->
+    <div class="bot-widget" onclick="toggleChat()">
+        <i data-lucide="message-square"></i>
+    </div>
+
+    <div class="chat-panel glass" id="chatPanel">
+        <div class="chat-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%;"></div>
+                <span style="font-weight: 600;">Election Bot</span>
+            </div>
+            <i data-lucide="x" style="cursor: pointer;" onclick="toggleChat()"></i>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg msg-bot">Hello! I'm your Election Assistant. How can I help you today?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." onkeypress="handleChatEnter(event)">
+            <button class="btn btn-primary" style="padding: 0.5rem 1rem;" onclick="sendMessage()">
+                <i data-lucide="send" style="width: 18px;"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer class="container" style="padding: 4rem 1rem; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+        <p>&copy; 2026 Democracy Guide. Every vote counts.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
